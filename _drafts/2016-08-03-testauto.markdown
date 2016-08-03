@@ -1,0 +1,5 @@
+---
+layout: post
+title: "test-auto"
+date: "2016-08-03 10:28:37 +0800"
+---

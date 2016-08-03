@@ -1,0 +1,45 @@
+# Site settings
+title: 不知不觉
+email: shellsuperhu@gmail.com
+description: > # 人总要往前走的.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://shellsuper.tk" # the base hostname & protocol for your site
+
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+
+
+# Social account
+twitter:  shellsuperhu
+weibo:    shellsuperhu
+github:   shellsuperhu
+# codepen:  username
+# dribbble: username
+
+
+# Comment
+# disqus_shortname: discussion_shortname
+
+
+# Google Analytics
+# google_analytics: tracking_ID
+
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+atom:
+  buildCommand:
+    - jekyll
+    - build
+  buildEnv:
+    JEKYLL_ENV: development
+  postDirs:
+    - _newsletters
+  defaultPostDir: _drafts
