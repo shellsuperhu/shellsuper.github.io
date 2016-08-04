@@ -105,3 +105,60 @@ alert(myWindow.getBottomBar().getHeight()); // alerts 100
 
 #### 3.静态成员
 静态成员使用```statics```来设置
+
+```javascript
+Ext.define('Computer', {
+    statics: {
+        instanceCount: 0,
+        factory: function(brand) {
+            // 'this' in static methods refer to the class itself
+            return new this({brand: brand});
+        }
+    },
+
+    config: {
+        brand: null
+    }
+});
+
+var dellComputer = Computer.factory('Dell');
+var appleComputer = Computer.factory('Mac');
+
+alert(appleComputer.getBrand()); // using the auto-generated getter to get the value of a config property. Alerts "Mac"
+```
+
+#### 4.Debugging
+使用```Ext.getDisplayName()```得到name和方法
+
+```javascript
+throw new Error('['+ Ext.getDisplayName(arguments.callee) +'] Some message here');
+```
+
+# 布局与容器（Layouts and Containers）
+1. 容器（Containers）是一个特殊类型的组件（Components），容器可以包含很多组件
+2. 通常Panel作为容器
+
+```javascript
+Ext.create('Ext.panel.Panel', {
+    renderTo: Ext.getBody(),
+    width: 400,
+    height: 300,
+    title: 'Container Panel',
+    items: [
+        {
+            xtype: 'panel',
+            title: 'Child Panel 1',
+            height: 100,
+            width: '75%'
+        },
+        {
+            xtype: 'panel',
+            title: 'Child Panel 2',
+            height: 100,
+            width: '75%'
+        }
+    ]
+});
+```
+
+3. 
